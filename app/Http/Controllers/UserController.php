@@ -60,4 +60,9 @@ class UserController extends Controller
         return redirect()->route('profile.show-bio')->with('status', 'Bio updated successfully!');
     }
 
+    public function showPersonalityType($id){
+        $user = User::with('PersonalityType')->find($id);
+        return view('user.profile',compact('user'));
+    }
+
 }

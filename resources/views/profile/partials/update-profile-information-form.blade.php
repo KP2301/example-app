@@ -53,7 +53,12 @@
         <p class="mt-2 text-white">
         {{$user->bio->bio ?? 'No bio available'}}
         </p>
-
+        <h4 class="font-medium text-blue-900 dark:text-blue-100">
+            {{ __('Personality Type Information ') }}
+        </h4>
+        <p class="mt-2 text-blue-900 dark:text-blue-100">
+            {{$user->personality_types->type  ?? 'No personality available' }}, {{$user->personality_types->description ?? '' }}
+        </p>
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
             <a href="{{ route('profile.show-bio') }}" class="inline-flex items-center
