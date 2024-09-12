@@ -23,7 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/bio', [UserController::class, 'showBio'])->name('profile.show-bio');
     Route::patch('/profile/bio', [UserController::class, 'updateBio'])->name('profile.update-bio');
     Route::resource('diary', DiaryEntryController::class); 
-
+    Route::get('/display_diary', [DiaryEntryController::class, 'display_diary'])->name('diary.display_diary');
+    Route::get('/diary_count', [DiaryEntryController::class, 'diary_count'])->name('diary.diary_count');
+    Route::get('/get_conflict', [DiaryEntryController::class, 'get_conflict'])->name('diary.get_conflict');
 });
 
 require __DIR__.'/auth.php';
